@@ -1,0 +1,26 @@
+.blogs_haru {
+    width: 90%;
+    display: grid;  
+    grid-template-columns: repeat(3, 1fr); 
+    text-align: center;              
+    margin: auto;
+    gap: 20px;
+}
+.bb {
+    /* display: block; */
+    height: 60vh;
+    background-color: #f4f4f4;     
+    border: 1px solid black;            
+    padding: 20px;                
+    overflow: hidden;      
+}  
+.details{
+    width: 67%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+img {
+    width: 300px;
+    margin-bottom: 10px; 
+}

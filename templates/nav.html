@@ -1,0 +1,33 @@
+<style>
+
+    .nab{
+        /* background-color: rgb(199, 199, 199); */
+        padding: 20px;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: -10px;
+    }
+    .ll{
+        display: flex;
+        gap: 30px;
+    }
+</style>
+
+<div class="nab">
+    <a href="/">LOGO</a>
+    {% if user.is_authenticated %}
+    <div class="ll">
+        <a href="{% url 'blogadd' %}"><input type="submit" value="Add"></a>
+
+        <a href="{% url 'logout' %}"><input type="submit" value="Logout"></a>
+    </div>
+    {% else %}
+    <div class="ll">
+        <a href="{% url 'login' %}"><input type="submit" value="Login"></a>
+        <a href="{% url 'signup' %}"><input type="submit" value="Signup"></a>
+    </div>
+    {% endif %}
+
+</div>

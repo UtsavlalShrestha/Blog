@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="static/css/home.css">
+<div class="blogs_haru">
+    {% for x in blogs %}
+
+        <div class="bb">
+            <div class="c1">
+                <div class="edits">
+                    <a href="/"><strong>Edit</strong></a>
+                    <a href="/"><strong>Delete</strong></a>
+                </div>
+                <h1>{{ x.title }}</h1>
+
+                {% if x.image %}    
+                    <img src="{{ x.image.url }}" alt="{{ x.name }}">
+                {% endif %}
+                <div class="details">
+                    <p><strong>By {{ x.author.username|default:"testuser" }} </strong>, {{ x.created_at}}</p>
+                </div>
+                <p>{{ x.content }}</p>
+            </div>
+ 
+            
+        </div>  
+    {% endfor %}
+</div>
+
+{% endblock %}
