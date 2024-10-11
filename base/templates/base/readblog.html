@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+<div class="blog-detail">
+    <h1>{{ blog.title }}</h1>
+    <div class="image-container"><img src="{{ blog.image.url }}" alt="{{ blog.name }}"></div>
+    <p>{{ blog.content }}</p>
+    <p><strong>By {{ blog.author.username|default:"testuser" }} </strong>, {{ blog.created_at }}</p>
+</div>
+{% endblock %}

@@ -10,7 +10,7 @@
             <div class="c1">
                 <div class="edits">
                     <a href="/"><strong>Edit</strong></a>
-                    <a href="/"><strong>Delete</strong></a>
+                    <a href="{% url 'delete' x.id %}"><strong>Delete</strong></a>
                 </div>
                 <h1>{{ x.title }}</h1>
 
@@ -20,7 +20,8 @@
                 <div class="details">
                     <p><strong>By {{ x.author.username|default:"testuser" }} </strong>, {{ x.created_at}}</p>
                 </div>
-                <p>{{ x.content }}</p>
+                <p>{{ x.content|slice:":200" }}...</p> <!-- Limiting content to 200 characters -->
+                <a href="{% url 'readblog' x.id %}">Read More</a> <!-- Redirect to detailed page -->
             </div>
  
             

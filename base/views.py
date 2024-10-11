@@ -66,3 +66,16 @@ def home(request):
     blogs = Blog.objects.all().order_by('-created_at')
     context = {'blogs': blogs}
     return render(request,'base/home.html',context)
+
+def readblog(request, id):
+    blog = Blog.objects.get(id=id)
+    context = {'blog': blog}
+    return render(request,'base/readblog.html', context)
+
+def delete(request, id):
+    blog = Blog.objects.get(id=id)
+    blog.delete()
+    return redirect('home')
+
+# def edit(request, id):
+    
